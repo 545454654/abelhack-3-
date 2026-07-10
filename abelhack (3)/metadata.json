@@ -1,0 +1,6 @@
+{
+  "name": "AbelHack",
+  "description": "Tactical analysis and predictor helper for Greenbet games including Apple of Fortune and Crash.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

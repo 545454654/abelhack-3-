@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('https://db.onlinewebfonts.com/t/2c8b813b22e11500d43a593e921d7237.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jzoor';
+  src: url('https://alfont.com/wp-content/fonts/new-arabic-fonts//alfont_com_%D8%AE%D8%AF-%D8%AC%D8%B0%D9%8ور-%D9%81%D9%84%D8%A7%D8%AA-%D8%B9%D8%B1%D9%8A%D8%B6.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #e4e4e7;
+  font-family: 'Jzoor', 'Cairo', sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.font-ar {
+  font-family: 'Jzoor', 'Cairo', sans-serif !important;
+}
+
+.font-en {
+  font-family: 'Ethnocentric', sans-serif !important;
+}
+
+.glass-panel {
+  background: rgba(12, 12, 14, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.bg-grid-moving {
+  background-image: linear-gradient(rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+.neon-glow-strong {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6), 0 0 40px rgba(239, 68, 68, 0.3);
+}
+
+.neon-text {
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+.neon-text-strong {
+  text-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 25px rgba(239, 68, 68, 0.6);
+}
+
+.neon-border {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.2), 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.neon-border-strong {
+  border-color: rgba(239, 68, 68, 0.8);
+  box-shadow: inset 0 0 15px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+  background: linear-gradient(0deg, transparent, rgba(239, 68, 68, 0.05), transparent);
+  opacity: 0.1;
+  position: fixed;
+  bottom: 100%;
+  animation: scanline 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { bottom: 100%; }
+  100% { bottom: -100px; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes noise {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%); }
+  70% { transform: translate(0, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+.noise-bg {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceablethemes.com/img/noise-transparent.png') repeat;
+  animation: noise 0.2s infinite;
+  opacity: 0.05;
+  visibility: visible;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.3); }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
